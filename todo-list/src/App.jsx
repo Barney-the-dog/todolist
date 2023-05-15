@@ -7,7 +7,7 @@ import Header from './components/Header/Header';
 import { useLocalStorage } from './hooks/useLocalStorage';
 
 function App() {
-  const [list, setList] = useState([])
+  const [list, setList] = useLocalStorage('task', [])
   const [text, setText] = useState('')
 
   function handleSubmit(event){
@@ -24,13 +24,17 @@ function App() {
       })
       setList(newArr)
     }
+
+  function deleteTask(id) {
+      setList(list.filter((el) => id !== el.id));
+    }
   
   return (
     <>
     <main className='container my-5'>
       <Header />
       <Form text={text} setText={setText} handleSubmit={handleSubmit}/>    
-      <TaskList posts={list} changeTaskStatus={changeTaskStatus} />  
+      <TaskList list={list} changeTaskStatus={changeTaskStatus} deleteTask={deleteTask} />  
       <Footer />
     </main>
     </>

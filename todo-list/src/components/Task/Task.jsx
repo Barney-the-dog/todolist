@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Task({text, taskStatus, changeTaskStatus, id}) {
+function Task({text, taskStatus, changeTaskStatus, id, deleteTask}) {
     return (
         <div className='task'>
         <input className="form-check-input"
@@ -12,6 +12,9 @@ function Task({text, taskStatus, changeTaskStatus, id}) {
                style={taskStatus ? {textDecorationLine: 'line-through'} : {textDecorationLine: 'none'}} >
         {text}
         </label>
+        <button className="btn btn-primary form-check-btn" onClick={() => deleteTask(id)}>
+        Delete task
+      </button>
         </div>
     );
 }
