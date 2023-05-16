@@ -7,6 +7,7 @@ return savedValue || defaultValue
 
 export function useLocalStorage(key, initalValue) {
 const [value, setValue] = useState(getSavedValue(key, initalValue))
-useEffect(() => localStorage.setItem(key, value), [key, value])
+
+useEffect(() => localStorage.setItem(key, JSON.stringify(value)), [key, value])
 return [value, setValue]
 }

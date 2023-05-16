@@ -45,3 +45,16 @@
   padding-top: 400px;
   text-align: center;
 }
+
+.task {
+  padding: 3vh 0;
+}
+
+.btn {
+  margin: 25px;
+}
+
+.form-check-label {
+  padding-right: 30px;
+  margin-right: 20px;
+}
