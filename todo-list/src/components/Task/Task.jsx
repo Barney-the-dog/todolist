@@ -1,7 +1,18 @@
 import React from 'react';
 
 function Task({text, taskStatus, changeTaskStatus, id, deleteTask}) {
-    return (
+
+  // function deleteTask(id) {
+  //   dispatch({
+  //     type: 'DELETE_TASK',
+  //       payload: {
+  //         text,
+  //       }
+  //   })
+  //     // setList(state.list.filter((el) => id !== el.id));
+  //   }
+
+  return (
         <div className='task'>
         <input className="form-check-input"
                type="checkbox"
