@@ -1,6 +1,24 @@
 import React from 'react';
+import { useContext, useState } from 'react';
+import { globalContext } from '../../contexts/globalContext';
 
-function Form({text, setText, handleSubmit}) {
+function Form() {
+  const { dispatch } = useContext(globalContext)
+  const [text, setText] = useState('')
+
+  function handleSubmit(event){
+    event.preventDefault()
+    setText('')
+
+    dispatch({
+      type: 'ADD_TASK',
+      payload: {
+        text,
+        // id: Date.now(),
+      }
+    })
+  }
+
     return (
         <form className='mb-3' onSubmit={handleSubmit}>
       <div className="form-group row">
