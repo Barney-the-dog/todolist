@@ -1,6 +1,28 @@
 import React from 'react';
+import { useContext, useState } from 'react';
+import { globalContext } from '../../contexts/globalContext';
 
-function Form({text, setText, handleSubmit}) {
+function Form () {
+  const { dispatch } = useContext(globalContext)
+  
+  const [text, setText] = useState('')
+
+  function handleSubmit(event){
+    event.preventDefault()
+    
+    if (text) {
+    dispatch({
+      type: 'ADD_TASK',
+      payload: {
+        text,
+        taskStatus: false,
+                    }
+                }
+            )
+        }
+        setText('')
+    }
+
     return (
         <form className='mb-3' onSubmit={handleSubmit}>
       <div className="form-group row">
@@ -28,5 +50,4 @@ function Form({text, setText, handleSubmit}) {
       </form>
     );
 }
-
-export default Form;
+export default Form
