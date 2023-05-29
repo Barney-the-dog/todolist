@@ -11,9 +11,9 @@ function TaskList() {
         {state.list.map((post) => (
           <div key = {post.id} className="form-check">
             <Task text={post.text} 
-            changeTaskStatus={changeTaskStatus} 
-            id={post.id} status={post.status} 
-            deleteTask={deleteTask}/>
+            id={post.id} 
+            status={post.status} 
+            />
           </div>
         ))
         }

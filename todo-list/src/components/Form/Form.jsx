@@ -1,5 +1,5 @@
 import React from 'react';
-import { React, useContext, useState } from 'react';
+import { useContext, useState } from 'react';
 import { globalContext } from '../../contexts/globalContext';
 
 function Form() {
