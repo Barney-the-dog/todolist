@@ -1,25 +1,30 @@
 import './styles/App.css';
-import React from "react";
-import Main from './components/Main/Main';
-import { globalContext as GlobalContext } from "./contexts/globalContext";
+import './App.css';
+import Footer from './components/Footer/Footer';
+import Header from './components/Header/Header';
 import { useLocalStorage } from './hooks/useLocalStorage';
+import Main from './components/Main/Main';
+import { globalContext as GlobalContext } from './contexts/globalContext';
+import React from 'react';
 
 function App() {
-
   const initialState = {
-    list: [],
-    text: ''
+    list: []
   }
 
-  const [state, dispatch] = useLocalStorage('task', initialState)
+  const [state, dispatch] = useLocalStorage('tasks', initialState);
 
-return (
-  <>
-  <GlobalContext.Provider value={{state, dispatch}}>
-  <Main />
-  </GlobalContext.Provider>
-  </>
-);
+  
+  return (
+    
+     <div className="App wrapper">
+      <Header />
+      <GlobalContext.Provider value={{ state, dispatch }}>
+        <Main />
+      </GlobalContext.Provider>
+      <Footer />
+    </div>
+  );
 }
 
 export default App;

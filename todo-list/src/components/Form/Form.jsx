@@ -1,27 +1,25 @@
 import React from 'react';
-import { useContext, useState } from 'react';
+import { React, useContext, useState } from 'react';
 import { globalContext } from '../../contexts/globalContext';
 
-function Form () {
+function Form() {
   const { dispatch } = useContext(globalContext)
-  
   const [text, setText] = useState('')
 
   function handleSubmit(event){
     event.preventDefault()
     
+
     if (text) {
     dispatch({
       type: 'ADD_TASK',
       payload: {
         text,
-        taskStatus: false,
-                    }
-                }
-            )
-        }
-        setText('')
-    }
+      }
+    })
+  }
+  setText('')
+}
 
     return (
         <form className='mb-3' onSubmit={handleSubmit}>
