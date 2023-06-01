@@ -9,7 +9,7 @@ function TaskList() {
   return (
         <div className="col-sm-10">
         {state.list.map((post) => (
-          <div key = {post.id} className="form-check">
+          <div key = {post.id}>
             <Task text={post.text} 
             id={post.id} 
             status={post.status} 

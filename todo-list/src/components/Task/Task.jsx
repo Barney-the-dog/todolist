@@ -18,7 +18,6 @@ function Task({text, status, id}) {
   }
 
   function changeStatus(id) {
-    setChecked(!checked);
     dispatch({
       type: 'CHANGE_STATUS',
       payload: id,

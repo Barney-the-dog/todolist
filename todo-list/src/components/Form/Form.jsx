@@ -15,6 +15,7 @@ function Form() {
       type: 'ADD_TASK',
       payload: {
         text,
+        id: Date.now(),
       }
     })
   }
