@@ -8,10 +8,8 @@ function Main() {
 
   return (
     <main className="container my-5">
-        <Header />
         <Form />
         <TaskList /> 
-        <Footer /> 
     </main>
   );
 }
